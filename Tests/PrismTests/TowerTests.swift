@@ -6,7 +6,7 @@
 //===----------------------------------------------------------------------===//
 
 import Testing
-import Pylon
+import Prism
 
 @Suite("BoxService")
 struct TowerTests {

@@ -1,6 +1,6 @@
 // swift-tools-version: 6.2
 //
-//  pylon — Service and Layer abstractions for Swift.
+//  prism — Service and Layer abstractions for Swift.
 //
 //  Direct port of Rust's `tower` crate. The `Service<Request> -> Response`
 //  trait and `Layer` (middleware wrapper) are the foundation abstractions
@@ -11,20 +11,20 @@
 import PackageDescription
 
 let package = Package(
-    name: "pylon",
+    name: "prism",
     products: [
-        .library(name: "Pylon", targets: ["Pylon"]),
+        .library(name: "Prism", targets: ["Prism"]),
     ],
     targets: [
         .target(
-            name: "Pylon",
-            path: "Sources/Pylon",
+            name: "Prism",
+            path: "Sources/Prism",
             swiftSettings: baseSwiftSettings
         ),
         .testTarget(
-            name: "PylonTests",
-            dependencies: ["Pylon"],
-            path: "Tests/PylonTests",
+            name: "PrismTests",
+            dependencies: ["Prism"],
+            path: "Tests/PrismTests",
             swiftSettings: baseSwiftSettings
         ),
     ]
