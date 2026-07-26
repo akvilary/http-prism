@@ -11,20 +11,20 @@
 import PackageDescription
 
 let package = Package(
-    name: "prism",
+    name: "http-prism",
     products: [
-        .library(name: "Prism", targets: ["Prism"]),
+        .library(name: "HTTPPrism", targets: ["HTTPPrism"]),
     ],
     targets: [
         .target(
-            name: "Prism",
-            path: "Sources/Prism",
+            name: "HTTPPrism",
+            path: "Sources/HTTPPrism",
             swiftSettings: baseSwiftSettings
         ),
         .testTarget(
-            name: "PrismTests",
-            dependencies: ["Prism"],
-            path: "Tests/PrismTests",
+            name: "HTTPPrismTests",
+            dependencies: ["HTTPPrism"],
+            path: "Tests/HTTPPrismTests",
             swiftSettings: baseSwiftSettings
         ),
     ]

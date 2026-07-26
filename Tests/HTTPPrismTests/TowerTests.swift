@@ -6,7 +6,7 @@
 //===----------------------------------------------------------------------===//
 
 import Testing
-import Prism
+import HTTPPrism
 
 @Suite("BoxService")
 struct TowerTests {
