@@ -6,8 +6,6 @@
 //  trait and `Layer` (middleware wrapper) are the foundation abstractions
 //  that Starlight (axum port) is built on.
 //
-//  Zero external dependencies — only Foundation.
-//
 import PackageDescription
 
 let package = Package(
@@ -15,9 +13,15 @@ let package = Package(
     products: [
         .library(name: "HTTPPrism", targets: ["HTTPPrism"]),
     ],
+    dependencies: [
+        .package(url: "https://github.com/akvilary/http.git", from: "0.1.0"),
+    ],
     targets: [
         .target(
             name: "HTTPPrism",
+            dependencies: [
+                .product(name: "HTTP", package: "http"),
+            ],
             path: "Sources/HTTPPrism",
             swiftSettings: baseSwiftSettings
         ),

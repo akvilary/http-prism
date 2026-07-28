@@ -41,6 +41,7 @@
 //===----------------------------------------------------------------------===//
 
 import Foundation
+import HTTP
 
 /// Asynchronous `Request -> Response` transformer — the central
 /// abstraction of the framework.
@@ -74,3 +75,11 @@ public protocol Service: Sendable {
     /// should be returned as a 5xx `Response`, not thrown.
     func call(_ request: consuming Request) async throws -> Response
 }
+
+/// Convenience protocol for HTTP services — `Service<HTTP.Request, HTTP.Response>`.
+///
+/// Use as a constraint instead of verbose `where S.Request == HTTP.Request,
+/// S.Response == HTTP.Response`. Conformers get the constraint for free
+/// (Rust: `Service<http::Request<Response>>`).
+public protocol HTTPService: Service
+where Request == HTTP.Request, Response == HTTP.Response {}
