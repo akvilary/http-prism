@@ -20,7 +20,7 @@ let package = Package(
         .target(
             name: "HTTPPrism",
             dependencies: [
-                .product(name: "HTTP", package: "http-model"),
+                .product(name: "HTTPModel", package: "http-model"),
             ],
             path: "Sources/HTTPPrism",
             swiftSettings: baseSwiftSettings
