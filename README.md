@@ -22,7 +22,7 @@ Early / experimental. Currently used by:
 ## Installation
 
 ```swift
-.package(url: "https://github.com/akvilary/http-prism.git", from: "0.1.1")
+.package(url: "https://github.com/akvilary/http-prism.git", from: "0.2.0")
 ```
 
 ```swift
