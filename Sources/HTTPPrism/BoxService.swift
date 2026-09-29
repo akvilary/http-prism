@@ -27,6 +27,7 @@
 //===----------------------------------------------------------------------===//
 
 import Foundation
+import HTTPModel
 
 /// A type-erased `Service`.
 ///
@@ -86,3 +87,8 @@ public func erase<S: Service>(_ service: S) -> BoxService<S.Request, S.Response>
 // from the generic parameters (same names: Request, Response).
 
 extension BoxService: Service {}
+
+// Erased HTTP services are the canonical input to `serve()` (workers
+// wrap the user service in one) — satisfy the constrained alias too.
+extension BoxService: HTTPService
+where Request == HTTPModel.Request, Response == HTTPModel.Response {}
