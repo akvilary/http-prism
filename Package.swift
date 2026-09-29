@@ -14,13 +14,13 @@ let package = Package(
         .library(name: "HTTPPrism", targets: ["HTTPPrism"]),
     ],
     dependencies: [
-        .package(path: "../http"),
+        .package(path: "../http-model"),
     ],
     targets: [
         .target(
             name: "HTTPPrism",
             dependencies: [
-                .product(name: "HTTP", package: "http"),
+                .product(name: "HTTP", package: "http-model"),
             ],
             path: "Sources/HTTPPrism",
             swiftSettings: baseSwiftSettings
