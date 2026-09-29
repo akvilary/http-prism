@@ -41,7 +41,7 @@ modelled by awaiting the call itself):
 
 ```swift
 import HTTPPrism
-import HTTP
+import HTTPModel
 
 public protocol Service: Sendable {
     associatedtype Request: Sendable
